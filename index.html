@@ -1,88 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<title>CSS Template als Platzhalter für zukünftige Projekte</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-}
-
-/* Container for flexboxes */
-.row {
-  display: -webkit-flex;
-  display: flex;
-}
-
-/* Create three unequal columns that sits next to each other */
-.column {
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Left and right column */
-.column.side {
-   -webkit-flex: 1;
-   -ms-flex: 1;
-   flex: 1;
-}
-
-/* Middle column */
-.column.middle {
-  -webkit-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .row {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Grundlagen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Diese Homepage soll als Platzhalter dienen, bis bemerkenswertere Homepages entworfen wurden</h1>
-<h2>CSS Template using Flexbox</h2>
-<p>In this example, we have created a header, three unequal columns and a footer. On smaller screens, the columns will stack on top of each other. Resize the browser window to see the responsive effect.</p>
-<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 and earlier versions.</p>
+    <header>
+        <h1>CSS Flexbox verstehen</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="tipps.html">Tipps</a></li>
+                <li><a href="anleitung.html">Anleitung</a></li>
+                <li><a href="flexbox.html">Flexbox-Grundlagen</a></li>
+                <li><a href="beispiel.html">Beispielseite</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="header">
-  <h2>Header</h2>
-</div>
+    <main>
+        <section>
+            <h2>Was ist Flexbox?</h2>
+            <p>Flexbox ist eine Layout-Technik in CSS, mit der du einfach flexible Layouts erstellen kannst. Mit Flexbox kannst du Elemente auf deiner Seite ausrichten und verteilen, ohne komplizierte Positionierungstechniken zu verwenden.</p>
+        </section>
 
-<div class="row">
-  <div class="column side" style="background-color:#aaa;">Column</div>
-  <div class="column middle" style="background-color:#bbb;">Column</div>
-  <div class="column side" style="background-color:#ccc;">Column</div>
-</div>
+        <section>
+            <h2>Flexbox-Beispiel</h2>
+            <p>Hier ist ein einfaches Beispiel, wie Flexbox funktioniert. Drei Boxen werden in einer Zeile gleichmäßig verteilt.</p>
 
-<div class="footer">
-  <p>Footer</p>
-</div>
+            <h3>HTML-Code:</h3>
+            <pre><code>
+&lt;div class="flex-container"&gt;
+    &lt;div class="box"&gt;Box 1&lt;/div&gt;
+    &lt;div class="box"&gt;Box 2&lt;/div&gt;
+    &lt;div class="box"&gt;Box 3&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
 
+            <h3>CSS-Code:</h3>
+            <pre><code>
+.flex-container {
+    display: flex;
+    justify-content: space-around; /* Verteilung der Boxen */
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.box {
+    background-color: coral;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+}
+            </code></pre>
+
+            <div class="flex-container">
+                <div class="box">Box 1</div>
+                <div class="box">Box 2</div>
+                <div class="box">Box 3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Wichtige Flexbox-Eigenschaften</h2>
+            <ul>
+                <li><strong>display: flex;</strong> – Aktiviert Flexbox für ein Element.</li>
+                <li><strong>justify-content</strong> – Bestimmt die horizontale Ausrichtung der Elemente (z.B. <em>space-around</em>, <em>center</em>, <em>space-between</em>).</li>
+                <li><strong>align-items</strong> – Bestimmt die vertikale Ausrichtung der Elemente.</li>
+                <li><strong>flex-direction</strong> – Ändert die Richtung der Elemente (z.B. <em>row</em> für horizontal oder <em>column</em> für vertikal).</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meine Flexbox Homepage</p>
+    </footer>
 </body>
 </html>
 
